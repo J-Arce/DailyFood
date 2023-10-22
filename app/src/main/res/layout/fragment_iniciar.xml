@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Iniciar">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textIniciarSesion"
+            android:layout_width="199dp"
+            android:layout_height="25dp"
+            android:text="@string/textOlvidoContrasena"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnIniciarSesion"
+            android:layout_width="236dp"
+            android:layout_height="51dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/primario"
+            android:onClick="iniciarSesion"
+            android:text="@string/btnIniciarSesion"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textIniciarSesion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:ems="10"
+            android:hint="@string/textEmail"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/texto_secundario"
+            android:textColorHint="@color/texto_secundario"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/inputPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:ems="10"
+            android:hint="@string/textPassword"
+            android:inputType="textPassword"
+            android:textColor="@color/texto_secundario"
+            android:textColorHint="@color/texto_secundario"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

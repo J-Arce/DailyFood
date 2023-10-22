@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario_oscuro">#D32F2F</color>
+    <color name="primario_claro">#FFCDD2</color>
+    <color name="primario">#F44336</color>
+    <color name="texto_icono">#FFFFFF</color>
+    <color name="acentuacion">#9E9E9E</color>
+    <color name="texto_primario">#212121</color>
+    <color name="texto_secundario">#757575</color>
+    <color name="divisor">#BDBDBD</color>
+</resources>

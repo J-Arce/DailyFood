@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Perfil">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/texto_primario"
+        app:layout_constraintBottom_toBottomOf="@+id/bienvenida"
+        app:layout_constraintTop_toBottomOf="@+id/bienvenida">
+
+
+        <Button
+            android:id="@+id/preparacionesMeGustan"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/primario"
+            android:text="@string/btnPreparacionesMeGustan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/misRecetas"
+            android:layout_width="200dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/primario"
+            android:text="@string/btnMisRecetas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preparacionesMeGustan" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo_daily_food"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/misRecetas" />
+
+        <TextView
+            android:id="@+id/cambiarContraseña"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/textCambiarContraseña"
+            android:textColor="@color/texto_icono"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/cerrarSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            android:text="@string/textCerrarSesion"
+            android:textColor="@color/texto_icono"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cambiarContraseña" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

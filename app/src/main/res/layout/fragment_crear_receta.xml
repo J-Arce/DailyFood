@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearReceta">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="763dp"
+            android:layout_height="1040dp"
+            android:layout_marginStart="-200dp"
+            android:layout_marginTop="-160dp"
+            android:rotation="90"
+            android:src="@drawable/fondo_crear_receta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textCrearReceta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/textCrearReceta"
+            android:textColor="@color/texto_primario"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textNombreReceta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/texto_icono"
+            android:ems="10"
+            android:hint="@string/textNombreReceta"
+            android:inputType="text"
+            android:textColorHint="@color/texto_secundario"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textCrearReceta" />
+
+        <TextView
+            android:id="@+id/textIngredientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/textIngredientes"
+            android:textColor="@color/texto_primario"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNombreReceta" />
+
+        <EditText
+            android:id="@+id/textSeleccioneTipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/texto_icono"
+            android:ems="10"
+            android:hint="@string/textSeleccioneTipo"
+            android:inputType="text"
+            android:textColorHint="@color/texto_secundario"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textIngredientes" />
+
+        <TextView
+            android:id="@+id/textPreparacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:text="@string/textPreparacion"
+            android:textColor="@color/texto_primario"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textSeleccioneTipo" />
+
+        <EditText
+            android:id="@+id/textEscribaProceso"
+            android:layout_width="365dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/texto_icono"
+            android:ems="10"
+            android:hint="@string/textEscribaProceso"
+            android:inputType="text"
+            android:textColorHint="@color/texto_secundario"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPreparacion" />
+
+        <EditText
+            android:id="@+id/textCalorias"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@color/texto_icono"
+            android:ems="10"
+            android:hint="@string/textCalorias"
+            android:inputType="text"
+            android:textColorHint="@color/texto_secundario"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/textEscribaProceso"
+            app:layout_constraintTop_toBottomOf="@+id/textEscribaProceso" />
+
+        <Button
+            android:id="@+id/btnGuardarCrearReceta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/primario_oscuro"
+            android:text="@string/btnGuardar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textCalorias" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/texto_primario"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logoHome"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/logo_daily_food"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bienvenida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/textBienvenida"
+            android:textColor="@color/texto_icono"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logoHome" />
+
+        <TextView
+            android:id="@+id/quePreparara"
+            android:layout_width="193dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/textQuePreparar"
+            android:textColor="@color/divisor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bienvenida" />
+
+        <TextView
+            android:id="@+id/loMasPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/textLoMasPopular"
+            android:textColor="@color/texto_icono"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/bienvenida"
+            app:layout_constraintTop_toBottomOf="@+id/quePreparara" />
+
+        <TextView
+            android:id="@+id/descripcionPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/textDescripcionPopular"
+            android:textColor="@color/divisor"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/loMasPopular"
+            app:layout_constraintTop_toBottomOf="@+id/loMasPopular" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="120dp"
+            android:text="Agregar Platillo"
+            android:textColor="@color/primario"
+            android:textSize="34sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

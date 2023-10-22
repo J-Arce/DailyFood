@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840387539649",
+    "project_id": "daily-food-83824",
+    "storage_bucket": "daily-food-83824.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840387539649:android:58a35d7b1a58515e209a40",
+        "android_client_info": {
+          "package_name": "com.example.dailyfood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_mR_hsKBrkqVAjGoeF69Yxzxl8j1x4PY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
