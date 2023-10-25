@@ -52,4 +52,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Principal.class);
         startActivity(i);
     }
+
+    public void crearReceta(View v) {
+        Intent i = new Intent(this, Pruebas.class);
+        startActivity(i);
+    }
 }

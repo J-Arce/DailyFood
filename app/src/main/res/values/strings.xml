@@ -47,6 +47,7 @@
     <string name="textPlatillosFavoritos">Platillos favoritos</string>
     <string name="textMisRecetas">Mis recetas</string>
     <string name="textMisIngredientes">Mis Ingredientes</string>
+    <string name="btnTomarFoto">Tomar foto</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

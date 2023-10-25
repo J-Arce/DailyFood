@@ -58,7 +58,7 @@ public class Iniciar extends Fragment {
         }
     }
 
-    public void iniciarSesion(View v){
+    //public void iniciarSesion(View v){
         /*
         EditText email = requireActivity().findViewById(R.id.inputEmail);
         String inputEmail = email.getText().toString();
@@ -70,9 +70,9 @@ public class Iniciar extends Fragment {
             Toast.makeText(this,"Error en las credenciales",Toast.LENGTH_SHORT).show();
         }
         */
-        Intent i = new Intent(requireActivity(), Principal.class);
-        startActivity(i);
-    }
+    //    Intent i = new Intent((), Principal.class);
+    //    startActivity(i);
+    //}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
