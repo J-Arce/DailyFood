@@ -64,14 +64,14 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextNombreReceta" />
 
         <EditText
-            android:id="@+id/editTextCampo2"
+            android:id="@+id/editTextIngredientes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/texto_icono"
             android:ems="10"
-            android:hint="@string/textSeleccioneTipo"
-            android:inputType="text"
+            android:hint="@string/textIngredientesReceta"
+            android:inputType="textMultiLine"
             android:textColorHint="@color/texto_secundario"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCampo2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextIngredientes" />
 
         <EditText
             android:id="@+id/editTextPreparacion"

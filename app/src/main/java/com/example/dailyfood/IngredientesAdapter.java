@@ -6,14 +6,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class IngredientesAdapter extends RecyclerView.Adapter<IngredientesAdapter.IngredientViewHolder> {
 
-    private ArrayList<String> ingredientesList;
+    private ArrayList<Ingrediente> ingredientesList;
 
-    public IngredientesAdapter(ArrayList<String> ingredientesList) {
+    public IngredientesAdapter(ArrayList<Ingrediente> ingredientesList) {
         this.ingredientesList = ingredientesList;
     }
 
@@ -26,7 +25,7 @@ public class IngredientesAdapter extends RecyclerView.Adapter<IngredientesAdapte
 
     @Override
     public void onBindViewHolder(@NonNull IngredientViewHolder holder, int position) {
-        String ingrediente = ingredientesList.get(position);
+        Ingrediente ingrediente = ingredientesList.get(position);
         holder.bind(ingrediente);
     }
 
@@ -43,8 +42,9 @@ public class IngredientesAdapter extends RecyclerView.Adapter<IngredientesAdapte
             textViewIngrediente = itemView.findViewById(R.id.textViewIngrediente);
         }
 
-        public void bind(String ingrediente) {
-            textViewIngrediente.setText(ingrediente);
+        public void bind(Ingrediente ingrediente) {
+            textViewIngrediente.setText(ingrediente.getNombre());
+            // Puedes acceder a otras propiedades de Ingrediente si es necesario
         }
     }
 }

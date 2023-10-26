@@ -11,22 +11,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class MisIngredientes extends Fragment {
 
-    private ArrayList<String> listaIngredientes;
-    private ArrayList<Boolean> ingredientesMarcados;
+    private ArrayList<Ingrediente> listaIngredientes;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mis_ingredientes, container, false);
 
-        // Obtener las listas de ingredientes y marcas desde el fragmento IngresarAlimento
+        // Obtener las listas de ingredientes desde el fragmento IngresarAlimento
         IngresarAlimento ingresarAlimento = (IngresarAlimento) getParentFragmentManager().findFragmentByTag("fragment_ingresar_alimento");
 
         if (ingresarAlimento != null) {
-            listaIngredientes = ingresarAlimento.getListaIngredientes();
-            ingredientesMarcados = new ArrayList<>(Collections.nCopies(listaIngredientes.size(), false));
+            listaIngredientes = new ArrayList<>();
+            ArrayList<String> nombresIngredientes = ingresarAlimento.getListaIngredientes();
+
+            // Inicializa la lista de ingredientes con todos los ingredientes no marcados
+            for (String nombreIngrediente : nombresIngredientes) {
+                listaIngredientes.add(new Ingrediente(nombreIngrediente, false));
+            }
         } else {
             // Manejar la situación en la que el fragmento IngresarAlimento no se encuentra
             Toast.makeText(getActivity(), "No se encontró el fragmento ingresar alimento".toString(), Toast.LENGTH_LONG).show();
@@ -44,3 +47,4 @@ public class MisIngredientes extends Fragment {
         return view;
     }
 }
+

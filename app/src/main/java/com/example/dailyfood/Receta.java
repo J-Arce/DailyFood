@@ -1,13 +1,15 @@
 package com.example.dailyfood;
 
+import java.util.List;
+
 public class Receta {
     private String nombreReceta;
-    private String campo2;
+    private List<String> ingredientes; // Cambiar el tipo a List<String>
     private String preparacion;
 
-    public Receta(String nombreReceta, String campo2, String preparacion) {
+    public Receta(String nombreReceta, List<String> ingredientes, String preparacion) {
         this.nombreReceta = nombreReceta;
-        this.campo2 = campo2;
+        this.ingredientes = ingredientes;
         this.preparacion = preparacion;
     }
 
@@ -15,11 +17,12 @@ public class Receta {
         return nombreReceta;
     }
 
-    public String getCampo2() {
-        return campo2;
+    public List<String> getIngredientes() {
+        return ingredientes; // Devolver la lista de ingredientes
     }
 
     public String getPreparacion() {
         return preparacion;
     }
 }
+

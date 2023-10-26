@@ -64,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show();
     }
 
+    public void cargarFragmentoIniciar() {
+        Iniciar iniciarFragment = new Iniciar(); // Reemplaza "Iniciar" por el nombre correcto de tu fragmento de inicio
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.contenedor, iniciarFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
+
     public boolean iniciarSesion(String emailIngresado, String contraseniaIngresada) {
         for (CredencialUsuario credencial : listaCredenciales) {
             if (credencial.getEmail().equals(emailIngresado) && credencial.getContrasenia().equals(contraseniaIngresada)) {
