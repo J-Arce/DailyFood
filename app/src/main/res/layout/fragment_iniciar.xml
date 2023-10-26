@@ -27,7 +27,6 @@
             android:layout_height="51dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="@color/primario"
-            android:onClick="iniciarSesion"
             android:text="@string/btnIniciarSesion"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -36,7 +35,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/editTextEmailIniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
@@ -46,12 +45,12 @@
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/inputPassword"
+            app:layout_constraintBottom_toTopOf="@+id/editTextContraseniaIniciar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/inputPassword"
+            android:id="@+id/editTextContraseniaIniciar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="70dp"

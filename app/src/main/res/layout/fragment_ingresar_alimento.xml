@@ -35,14 +35,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/editTextProteinas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="20dp"
             android:background="@color/texto_icono"
             android:ems="10"
             android:hint="@string/textProteinas"
             android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="25sp"
@@ -51,7 +52,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textQueTengo" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/editTextCarbohidratos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -59,15 +60,16 @@
             android:ems="10"
             android:hint="@string/textCarbohidratos"
             android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextProteinas" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/editTextGrasas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -75,15 +77,16 @@
             android:ems="10"
             android:hint="@string/textGrasas"
             android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextCarbohidratos" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/editTextBebidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -91,15 +94,16 @@
             android:ems="10"
             android:hint="@string/textBebidas"
             android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextGrasas" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/editTextFrutas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -107,15 +111,16 @@
             android:ems="10"
             android:hint="@string/textFrutas"
             android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextBebidas" />
 
         <EditText
-            android:id="@+id/editTextText6"
+            android:id="@+id/editTextVerduras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -123,23 +128,84 @@
             android:ems="10"
             android:hint="@string/textVerduras"
             android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="@color/texto_secundario"
             android:textColorHint="@color/texto_secundario"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextFrutas" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnGuardarIngresarAlimento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="@color/primario_oscuro"
             android:text="@string/btnGuardar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextVerduras" />
+
+        <ImageView
+            android:id="@+id/icon_pez"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@drawable/icon_pez"
+            app:layout_constraintEnd_toStartOf="@+id/editTextProteinas"
+            app:layout_constraintTop_toTopOf="@+id/editTextProteinas" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@drawable/icon_pan"
+            app:layout_constraintEnd_toStartOf="@+id/editTextCarbohidratos"
+            app:layout_constraintTop_toBottomOf="@+id/icon_pez" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@drawable/icon_palta"
+            app:layout_constraintEnd_toStartOf="@+id/editTextGrasas"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@drawable/icon_queso"
+            app:layout_constraintEnd_toStartOf="@+id/editTextBebidas"
+            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@drawable/icon_manzana"
+            app:layout_constraintEnd_toStartOf="@+id/editTextFrutas"
+            app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="-20dp"
+            android:src="@drawable/icon_zanahoria"
+            app:layout_constraintEnd_toStartOf="@+id/editTextVerduras"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

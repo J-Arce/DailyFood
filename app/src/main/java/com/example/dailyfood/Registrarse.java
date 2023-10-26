@@ -1,97 +1,54 @@
 package com.example.dailyfood;
 
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
-import android.util.Log; // Importa Log
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
+import android.view.LayoutInflater;
+import androidx.fragment.app.Fragment;
 
 public class Registrarse extends Fragment {
 
-    FirebaseFirestore mFirestore;
-    FirebaseAuth mAuth;
+    private EditText emailEditText;
+    private EditText contraseniaEditText;
+    private Button registrarButton;
 
-    private EditText email;
-    private EditText password;
-    private Button btnRegistrarse;
+    public Registrarse() {
+        // Constructor vacío requerido
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_registrarse, container, false);
 
-        mFirestore = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        email = view.findViewById(R.id.textEmailRegistrarse);
-        password = view.findViewById(R.id.textCrearPassword);
-        btnRegistrarse = view.findViewById(R.id.btnRegistrarse);
+        emailEditText = view.findViewById(R.id.editTextEmail);
+        contraseniaEditText = view.findViewById(R.id.editTextContrasenia);
+        registrarButton = view.findViewById(R.id.buttonRegistrar);
 
-        btnRegistrarse.setOnClickListener(new View.OnClickListener() {
+        registrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String emailUser = email.getText().toString().trim();
-                String passUser = password.getText().toString().trim();
+            public void onClick(View view) {
+                // Obtener el correo electrónico y la contraseña ingresados por el usuario
+                String email = emailEditText.getText().toString();
+                String contrasenia = contraseniaEditText.getText().toString();
 
-                if (emailUser.isEmpty() || passUser.isEmpty()){
-                    Toast.makeText(getActivity(), "Complete los datos", Toast.LENGTH_SHORT).show();
+                // Verificar que el correo electrónico y la contraseña no estén vacíos
+                if (!email.isEmpty() && !contrasenia.isEmpty()) {
+                    // Registrar al usuario utilizando el método en MainActivity
+                    ((MainActivity) requireActivity()).registrarUsuario(email, contrasenia);
+
+                    // Puedes mostrar un mensaje de registro exitoso o realizar alguna otra acción aquí
                 } else {
-                    registrarUsuario(emailUser, passUser);
+                    // Mostrar un mensaje de error si el correo electrónico o la contraseña están vacíos
+                    Toast.makeText(requireContext(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
         return view;
     }
-
-    private void registrarUsuario(String emailUser, String passUser) {
-        mAuth.createUserWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    String id = mAuth.getCurrentUser().getUid();
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("id", id);
-                    map.put("email", emailUser);
-                    map.put("password", passUser);
-
-                    mFirestore.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Intent intent = new Intent(getActivity(), Principal.class);
-                            startActivity(intent);
-                            Toast.makeText(getActivity(), "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d("FirebaseError", "Error al guardar en Firestore: " + e.getMessage()); // Registra el error en Log
-                            Toast.makeText(getActivity(), "Error al guardar en Firestore", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } else {
-                    Log.d("FirebaseError", "Error al registrar en Firebase: " + task.getException().getMessage()); // Registra el error en Log
-                    Toast.makeText(getActivity(), "Error al registrar en Firebase", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
 }
+
 

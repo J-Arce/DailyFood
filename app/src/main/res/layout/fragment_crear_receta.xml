@@ -26,7 +26,7 @@
             android:id="@+id/textCrearReceta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="10dp"
             android:text="@string/textCrearReceta"
             android:textColor="@color/texto_primario"
             android:textSize="34sp"
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/textNombreReceta"
+            android:id="@+id/editTextNombreReceta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -61,10 +61,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNombreReceta" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextNombreReceta" />
 
         <EditText
-            android:id="@+id/textSeleccioneTipo"
+            android:id="@+id/editTextCampo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -82,17 +82,17 @@
             android:id="@+id/textPreparacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
             android:text="@string/textPreparacion"
             android:textColor="@color/texto_primario"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textSeleccioneTipo" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextCampo2" />
 
         <EditText
-            android:id="@+id/textEscribaProceso"
+            android:id="@+id/editTextPreparacion"
             android:layout_width="365dp"
             android:layout_height="42dp"
             android:layout_marginTop="10dp"
@@ -110,33 +110,33 @@
             android:id="@+id/btnGuardarCrearReceta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="50dp"
             android:backgroundTint="@color/primario_oscuro"
             android:text="@string/btnGuardar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivFoto" />
+            app:layout_constraintTop_toBottomOf="@+id/btnGuardarCraeReceta" />
 
         <ImageView
             android:id="@+id/ivFoto"
-            android:layout_width="192dp"
-            android:layout_height="164dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/cuadro_insertar_imagen"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/btnGuardarCraeReceta"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEscribaProceso" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPreparacion" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnGuardarCraeReceta"
             android:layout_width="102dp"
             android:layout_height="62dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="50dp"
             android:backgroundTint="@color/primario"
             android:text="@string/btnTomarFoto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEscribaProceso" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPreparacion" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

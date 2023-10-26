@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnRegistrarse"
+            android:id="@+id/buttonRegistrar"
             android:layout_width="228dp"
             android:layout_height="53dp"
             android:layout_marginBottom="10dp"
@@ -35,7 +35,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/textEmailRegistrarse"
+            android:id="@+id/editTextEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
@@ -44,12 +44,12 @@
             android:inputType="textEmailAddress"
             android:textColorHint="@color/texto_secundario"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/textCrearPassword"
+            app:layout_constraintBottom_toTopOf="@+id/editTextContrasenia"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/textCrearPassword"
+            android:id="@+id/editTextContrasenia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="70dp"
@@ -58,7 +58,7 @@
             android:inputType="textPassword"
             android:textColorHint="@color/texto_secundario"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnRegistrarse"
+            app:layout_constraintBottom_toTopOf="@+id/buttonRegistrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

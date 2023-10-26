@@ -1,64 +1,121 @@
 package com.example.dailyfood;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import com.example.dailyfood.R;
+import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link IngresarAlimento#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class IngresarAlimento extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private Button btnGuardarIngresarAlimento;
+    private EditText editTextProteinas;
+    private EditText editTextCarbohidratos;
+    private EditText editTextGrasas;
+    private EditText editTextBebidas;
+    private EditText editTextFrutas;
+    private EditText editTextVerduras;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private ArrayList<String> listaProteinas = new ArrayList<>();
+    private ArrayList<String> listaCarbohidratos = new ArrayList<>();
+    private ArrayList<String> listaGrasas = new ArrayList<>();
+    private ArrayList<String> listaBebidas = new ArrayList<>();
+    private ArrayList<String> listaFrutas = new ArrayList<>();
+    private ArrayList<String> listaVerduras = new ArrayList<>();
 
-    public IngresarAlimento() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment IngresarAlimento.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static IngresarAlimento newInstance(String param1, String param2) {
-        IngresarAlimento fragment = new IngresarAlimento();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    // Agrega una variable para almacenar la lista de ingredientes
+    private ArrayList<String> listaIngredientes = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ingresar_alimento, container, false);
+        View view = inflater.inflate(R.layout.fragment_ingresar_alimento, container, false);
+
+        // Obtener referencias a los elementos del diseño
+        btnGuardarIngresarAlimento = view.findViewById(R.id.btnGuardarIngresarAlimento);
+        editTextProteinas = view.findViewById(R.id.editTextProteinas);
+        editTextCarbohidratos = view.findViewById(R.id.editTextCarbohidratos);
+        editTextGrasas = view.findViewById(R.id.editTextGrasas);
+        editTextBebidas = view.findViewById(R.id.editTextBebidas);
+        editTextFrutas = view.findViewById(R.id.editTextFrutas);
+        editTextVerduras = view.findViewById(R.id.editTextVerduras);
+
+        // Agregar un OnClickListener al botón
+        btnGuardarIngresarAlimento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Obtener los valores de los EditText
+                String valorProteinas = editTextProteinas.getText().toString().toLowerCase();
+                String valorCarbohidratos = editTextCarbohidratos.getText().toString().toLowerCase();
+                String valorGrasas = editTextGrasas.getText().toString().toLowerCase();
+                String valorBebidas = editTextBebidas.getText().toString().toLowerCase();
+                String valorFrutas = editTextFrutas.getText().toString().toLowerCase();
+                String valorVerduras = editTextVerduras.getText().toString().toLowerCase();
+
+                // verificar si los editext están vacíos antes de agregar a las listas y si el valor ya está en esa lista
+                if (!valorProteinas.isEmpty() && !listaProteinas.contains(valorProteinas)) {
+                    listaProteinas.add(valorProteinas);
+                    listaIngredientes.add(valorProteinas);
+                }
+                if (!valorCarbohidratos.isEmpty() && !listaCarbohidratos.contains(valorCarbohidratos)) {
+                    listaCarbohidratos.add(valorCarbohidratos);
+                    listaIngredientes.add(valorCarbohidratos);
+                }
+                if (!valorGrasas.isEmpty() && !listaGrasas.contains(valorGrasas)) {
+                    listaGrasas.add(valorGrasas);
+                    listaIngredientes.add(valorGrasas);
+                }
+                if (!valorBebidas.isEmpty() && !listaBebidas.contains(valorBebidas)) {
+                    listaBebidas.add(valorBebidas);
+                    listaIngredientes.add(valorBebidas);
+                }
+                if (!valorFrutas.isEmpty() && !listaFrutas.contains(valorFrutas)) {
+                    listaFrutas.add(valorFrutas);
+                    listaIngredientes.add(valorFrutas);
+                }
+                if (!valorVerduras.isEmpty() && !listaVerduras.contains(valorVerduras)) {
+                    listaVerduras.add(valorVerduras);
+                    listaIngredientes.add(valorVerduras);
+                }
+
+                // Limpia los EditText después de guardar los valores
+                editTextProteinas.setText("");
+                editTextCarbohidratos.setText("");
+                editTextGrasas.setText("");
+                editTextBebidas.setText("");
+                editTextFrutas.setText("");
+                editTextVerduras.setText("");
+
+                mostrarListas();
+            }
+        });
+
+        return view;
+    }
+
+    private void mostrarListas() {
+        StringBuilder listas = new StringBuilder("Alimentos ingresados:\n");
+
+        // Construye un mensaje con el contenido de las listas
+        listas.append("Proteínas: ").append(listaProteinas.toString()).append("\n");
+        listas.append("Carbohidratos: ").append(listaCarbohidratos.toString()).append("\n");
+        listas.append("Grasas: ").append(listaGrasas.toString()).append("\n");
+        listas.append("Bebidas: ").append(listaBebidas.toString()).append("\n");
+        listas.append("Frutas: ").append(listaFrutas.toString()).append("\n");
+        listas.append("Verduras: ").append(listaVerduras.toString());
+
+        // Muestra los alimentos ingresados a las listas
+        Toast.makeText(getActivity(), listas.toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), listaIngredientes.toString(), Toast.LENGTH_LONG).show();
+    }
+
+    // Agrega un método para obtener la lista de ingredientes
+    public ArrayList<String> getListaIngredientes() {
+        return listaIngredientes;
     }
 }

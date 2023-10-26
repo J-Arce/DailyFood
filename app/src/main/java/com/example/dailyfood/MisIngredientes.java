@@ -1,64 +1,46 @@
 package com.example.dailyfood;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MisIngredientes#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MisIngredientes extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public MisIngredientes() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MisIngredientes.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MisIngredientes newInstance(String param1, String param2) {
-        MisIngredientes fragment = new MisIngredientes();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private ArrayList<String> listaIngredientes;
+    private ArrayList<Boolean> ingredientesMarcados;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_mis_ingredientes, container, false);
+
+        // Obtener las listas de ingredientes y marcas desde el fragmento IngresarAlimento
+        IngresarAlimento ingresarAlimento = (IngresarAlimento) getParentFragmentManager().findFragmentByTag("fragment_ingresar_alimento");
+
+        if (ingresarAlimento != null) {
+            listaIngredientes = ingresarAlimento.getListaIngredientes();
+            ingredientesMarcados = new ArrayList<>(Collections.nCopies(listaIngredientes.size(), false));
+        } else {
+            // Manejar la situación en la que el fragmento IngresarAlimento no se encuentra
+            Toast.makeText(getActivity(), "No se encontró el fragmento ingresar alimento".toString(), Toast.LENGTH_LONG).show();
         }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mis_ingredientes, container, false);
+        // Configura el RecyclerView
+        RecyclerView recyclerViewIngredientes = view.findViewById(R.id.recyclerViewIngredientes);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
+        recyclerViewIngredientes.setLayoutManager(layoutManager);
+
+        // Crea y configura el adaptador con la lista de ingredientes
+        IngredientesAdapter ingredientesAdapter = new IngredientesAdapter(listaIngredientes);
+        recyclerViewIngredientes.setAdapter(ingredientesAdapter);
+
+        return view;
     }
 }

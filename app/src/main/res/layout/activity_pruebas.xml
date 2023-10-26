@@ -35,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/textNombreReceta"
+            android:id="@+id/editTextNombreReceta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -60,10 +60,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textNombreReceta" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextNombreReceta" />
 
         <EditText
-            android:id="@+id/textSeleccioneTipo"
+            android:id="@+id/editTextCampo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -88,10 +88,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textSeleccioneTipo" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextCampo2" />
 
         <EditText
-            android:id="@+id/textEscribaProceso"
+            android:id="@+id/editTextPreparacion"
             android:layout_width="365dp"
             android:layout_height="42dp"
             android:layout_marginTop="10dp"
@@ -122,12 +122,12 @@
             android:layout_height="164dp"
             android:layout_marginTop="30dp"
             android:src="@drawable/cuadro_insertar_imagen"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/btnGuardarCraeReceta"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEscribaProceso" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPreparacion" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnGuardarCraeReceta"
             android:layout_width="102dp"
             android:layout_height="62dp"
             android:layout_marginTop="90dp"
@@ -136,9 +136,9 @@
             android:onClick="tomarFoto"
             android:text="@string/btnTomarFoto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEscribaProceso" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPreparacion" />
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnGuardarCraeReceta"
             android:layout_width="102dp"
             android:layout_height="62dp"
             android:layout_marginTop="90dp"
@@ -147,7 +147,7 @@
             android:onClick="tomarFoto"
             android:text="@string/btnTomarFoto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textEscribaProceso" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPreparacion" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

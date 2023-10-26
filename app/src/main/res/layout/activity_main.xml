@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/fondologin" />
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/viewPager"
         layout="@layout/barra_inicio"
         android:layout_width="292dp"
         android:layout_height="52dp"
@@ -39,7 +39,7 @@
         app:layout_constraintBottom_toTopOf="@+id/contenedorInicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2" />
+        app:layout_constraintTop_toBottomOf="@+id/viewPager" />
 
     <FrameLayout
         android:id="@+id/contenedorInicio"
