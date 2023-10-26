@@ -44,7 +44,6 @@ public class IngredientesAdapter extends RecyclerView.Adapter<IngredientesAdapte
 
         public void bind(Ingrediente ingrediente) {
             textViewIngrediente.setText(ingrediente.getNombre());
-            // Puedes acceder a otras propiedades de Ingrediente si es necesario
         }
     }
 }

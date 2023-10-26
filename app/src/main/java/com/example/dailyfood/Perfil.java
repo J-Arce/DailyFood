@@ -21,13 +21,11 @@ public class Perfil extends Fragment {
         preparacionesMeGustanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crea una instancia del fragmento "RecetasFavoritas"
                 RecetasFavoritas recetasFavoritasFragment = new RecetasFavoritas();
 
-                // Realiza una transacción de fragmentos para mostrar "RecetasFavoritas"
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.contenedor, recetasFavoritasFragment)
-                        .addToBackStack(null) // Opcional, para permitir la navegación hacia atrás
+                        .addToBackStack(null) // Agregar al historial de retroceso para volver una vista atras en vez de al login
                         .commit();
             }
         });
@@ -35,13 +33,11 @@ public class Perfil extends Fragment {
         misRecetasButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crea una instancia del fragmento "MisRecetas"
                 MisRecetas misRecetasFragment = new MisRecetas();
 
-                // Realiza una transacción de fragmentos para mostrar "MisRecetas"
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.contenedor, misRecetasFragment)
-                        .addToBackStack(null) // Opcional, para permitir la navegación hacia atrás
+                        .addToBackStack(null) // Agregar al historial de retroceso
                         .commit();
             }
         });

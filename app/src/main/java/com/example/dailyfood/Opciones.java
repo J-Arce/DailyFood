@@ -17,31 +17,27 @@ public class Opciones extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_opciones, container, false);
 
-        // Buscar los botones por su ID
         Button btnIngresarAlimento = view.findViewById(R.id.btnIngresarAlimento);
         Button btnCrearReceta = view.findViewById(R.id.btnCrearReceta);
 
-        // Agregar un OnClickListener al botón "Ingresar Alimento"
         btnIngresarAlimento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Al hacer clic en el botón, cargar el fragmento "IngresarAlimento"
+                // Al hacer clic en el botón "IngresarAlimento"
                 IngresarAlimento ingresarAlimentoFragment = new IngresarAlimento();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
-                // Etiquetar el fragmento "IngresarAlimento"
                 transaction.replace(R.id.contenedor, ingresarAlimentoFragment, "fragment_ingresar_alimento");
 
-                transaction.addToBackStack(null); // Agregar al historial de retroceso
+                transaction.addToBackStack(null); // Agregar al historial de retroceso para volver una vista atras en vez de al login
                 transaction.commit();
             }
         });
 
-        // Agregar un OnClickListener al botón "Crear Receta"
         btnCrearReceta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Al hacer clic en el botón, cargar el fragmento "CrearReceta"
+                // Al hacer clic en el botón "CrearReceta"
                 CrearReceta crearRecetaFragment = new CrearReceta();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.contenedor, crearRecetaFragment);

@@ -28,7 +28,7 @@ public class IngresarAlimento extends Fragment {
     private ArrayList<String> listaFrutas = new ArrayList<>();
     private ArrayList<String> listaVerduras = new ArrayList<>();
 
-    // Agrega una variable para almacenar la lista de ingredientes
+    // variable para guardar la lista de ingredientes
     private ArrayList<String> listaIngredientes = new ArrayList<>();
 
     @Override
@@ -36,7 +36,6 @@ public class IngresarAlimento extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ingresar_alimento, container, false);
 
-        // Obtener referencias a los elementos del diseño
         btnGuardarIngresarAlimento = view.findViewById(R.id.btnGuardarIngresarAlimento);
         editTextProteinas = view.findViewById(R.id.editTextProteinas);
         editTextCarbohidratos = view.findViewById(R.id.editTextCarbohidratos);
@@ -45,7 +44,6 @@ public class IngresarAlimento extends Fragment {
         editTextFrutas = view.findViewById(R.id.editTextFrutas);
         editTextVerduras = view.findViewById(R.id.editTextVerduras);
 
-        // Agregar un OnClickListener al botón
         btnGuardarIngresarAlimento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +99,6 @@ public class IngresarAlimento extends Fragment {
     private void mostrarListas() {
         StringBuilder listas = new StringBuilder("Alimentos ingresados:\n");
 
-        // Construye un mensaje con el contenido de las listas
         listas.append("Proteínas: ").append(listaProteinas.toString()).append("\n");
         listas.append("Carbohidratos: ").append(listaCarbohidratos.toString()).append("\n");
         listas.append("Grasas: ").append(listaGrasas.toString()).append("\n");
@@ -114,7 +111,6 @@ public class IngresarAlimento extends Fragment {
         Toast.makeText(getActivity(), listaIngredientes.toString(), Toast.LENGTH_LONG).show();
     }
 
-    // Agrega un método para obtener la lista de ingredientes
     public ArrayList<String> getListaIngredientes() {
         return listaIngredientes;
     }

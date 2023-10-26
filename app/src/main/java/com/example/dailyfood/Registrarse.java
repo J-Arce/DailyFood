@@ -16,7 +16,7 @@ public class Registrarse extends Fragment {
     private Button registrarButton;
 
     public Registrarse() {
-        // Constructor vacío requerido
+
     }
 
     @Override
@@ -36,12 +36,10 @@ public class Registrarse extends Fragment {
 
                 // Verificar que el correo electrónico y la contraseña no estén vacíos
                 if (!email.isEmpty() && !contrasenia.isEmpty()) {
-                    // Registrar al usuario utilizando el método en MainActivity
                     ((MainActivity) requireActivity()).registrarUsuario(email, contrasenia);
 
-                    // Puedes mostrar un mensaje de registro exitoso o realizar alguna otra acción aquí
                 } else {
-                    // Mostrar un mensaje de error si el correo electrónico o la contraseña están vacíos
+                    // Mensaje de error
                     Toast.makeText(requireContext(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }

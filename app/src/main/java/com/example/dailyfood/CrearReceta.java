@@ -14,17 +14,17 @@ import java.util.List;
 public class CrearReceta extends Fragment {
 
     private EditText editTextNombreReceta;
-    private EditText editTextCampo2; // Ahora se usará para ingresar la lista de alimentos
+    private EditText editTextCampo2; //
     private EditText editTextPreparacion;
     private Button btnGuardarCrearReceta;
-    private List<String> listaAlimentos = new ArrayList<>(); // Lista para almacenar alimentos
+    private List<String> listaAlimentos = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crear_receta, container, false);
 
         editTextNombreReceta = view.findViewById(R.id.editTextNombreReceta);
-        editTextCampo2 = view.findViewById(R.id.editTextIngredientes); // Cambiado el ID
+        editTextCampo2 = view.findViewById(R.id.editTextIngredientes);
         editTextPreparacion = view.findViewById(R.id.editTextPreparacion);
         btnGuardarCrearReceta = view.findViewById(R.id.btnGuardarCrearReceta);
 
@@ -35,11 +35,11 @@ public class CrearReceta extends Fragment {
                 String nombreReceta = editTextNombreReceta.getText().toString();
                 String preparacion = editTextPreparacion.getText().toString();
 
-                // Obtener los ingredientes del EditText (línea por línea)
+                // Obtener los ingredientes del EditText línea por línea
                 String ingredientesText = editTextCampo2.getText().toString();
                 String[] ingredientesArray = ingredientesText.split("\n");
 
-                // Crear una lista de ingredientes a partir del array
+                // Crear una lista de ingredientes
                 List<String> listaAlimentos = new ArrayList<>();
                 for (String ingrediente : ingredientesArray) {
                     if (!ingrediente.trim().isEmpty()) {

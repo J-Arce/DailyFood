@@ -31,16 +31,13 @@ public class MisIngredientes extends Fragment {
                 listaIngredientes.add(new Ingrediente(nombreIngrediente, false));
             }
         } else {
-            // Manejar la situación en la que el fragmento IngresarAlimento no se encuentra
             Toast.makeText(getActivity(), "No se encontró el fragmento ingresar alimento".toString(), Toast.LENGTH_LONG).show();
         }
 
-        // Configura el RecyclerView
         RecyclerView recyclerViewIngredientes = view.findViewById(R.id.recyclerViewIngredientes);
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
         recyclerViewIngredientes.setLayoutManager(layoutManager);
 
-        // Crea y configura el adaptador con la lista de ingredientes
         IngredientesAdapter ingredientesAdapter = new IngredientesAdapter(listaIngredientes);
         recyclerViewIngredientes.setAdapter(ingredientesAdapter);
 

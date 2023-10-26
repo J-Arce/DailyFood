@@ -19,13 +19,11 @@ public class Recetas extends Fragment {
         miSeleccionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crea una instancia del fragmento "MiSeleccion"
                 MiSeleccion miSeleccionFragment = new MiSeleccion();
 
-                // Realiza una transacción de fragmentos para mostrar "MiSeleccion"
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.contenedor, miSeleccionFragment)
-                        .addToBackStack(null) // Opcional, para permitir la navegación hacia atrás
+                        .addToBackStack(null) // Agregar al historial de retroceso para volver una vista atras en vez de al login
                         .commit();
             }
         });
@@ -33,13 +31,11 @@ public class Recetas extends Fragment {
         masPopularButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crea una instancia del fragmento "MasPopular"
                 MasPopular masPopularFragment = new MasPopular();
 
-                // Realiza una transacción de fragmentos para mostrar "MasPopular"
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.contenedor, masPopularFragment)
-                        .addToBackStack(null) // Opcional, para permitir la navegación hacia atrás
+                        .addToBackStack(null) // Agregar al historial de retroceso
                         .commit();
             }
         });

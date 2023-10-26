@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Receta {
     private String nombreReceta;
-    private List<String> ingredientes; // Cambiar el tipo a List<String>
+    private List<String> ingredientes;
     private String preparacion;
 
     public Receta(String nombreReceta, List<String> ingredientes, String preparacion) {
